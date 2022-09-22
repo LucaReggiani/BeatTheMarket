@@ -25,3 +25,58 @@ $1,000,000 for an exclusive right to its use, as well as financing further model
 
 ### stock_prices.txt
 Historical record of the development of the stock-prices of the three companies. The number listed is the stock-price at the close of the market that trading day. All the values have to scaled to be relative to the stock value of each company at the opening of the first day listed (100.0).
+
+| NAME    |      TYPE      |  RANGE |
+|---------|:--------------:|-------:|
+| company |    integer     |   0-2  |
+| year    |    integer     |2017-2020|
+| day     |    integer     | 1-366  |
+| quarter |    integer     |  0-3   |
+| stock_price  |   float   | 0.0-...|
+
+### market_analysis.txt
+Market analysis trend for each quarter (in 
+the data). The data is provided just-in-time, that is, the analysis for a given quarter is 
+available at the close of market the day before the start of the quarter. A trend value 
+of -1 means negative prospects, 0 neutral prospects, and +1 positive prospects.
+
+| NAME    |      TYPE      |  RANGE |
+|---------|:--------------:|-------:|
+| segment |   categorical  |{BIO, IT}|
+| year    |    integer     |2017-2020|
+| quarter |    integer     |  0-3   |
+| trend   |   integer   | {-1, 0-, 1|
+
+### market_segments.txt
+you see in which market segment each of the three companies operates.
+
+| NAME    |      TYPE      |  RANGE |
+|---------|:--------------:|-------:|
+| company |    integer     |   0-2  |
+| segment |   categorical  |{BIO, IT}|
+
+### info.txt
+information about various features that UpUpUp Inc. is 
+using in their current prediction model. It uses two independent expert predictions, 
+(one indicating a prediction of the stock going up, 0 otherwise). The sentiment 
+analysis score is the results of an extensive analysis of the discussion of the company 
+and its products in the media over the past 24 hours, where a score of 0 means bad 
+and 10 an excellent publicity. Finally, you are given four mysterious values that 
+UpUpUp Inc. is producing themselves, however, they are not willing to explain in 
+detail what they are. All they say is that some of the features are based on 
+accumulated historical values of the stock’s performance (you suspect that some of 
+them might also be based on some insider information, but that‘s a different story).
+
+| NAME    |      TYPE      |  RANGE |
+|---------|:--------------:|-------:|
+| company |    integer     |   0-2  |
+| year    |    integer     |2017-2020|
+| day     |    integer     |  1-366 |
+| quarter |    integer     |   0-3  |
+| expert1_prediction|binary|  {0,1} |
+| expert2_prediction|binary|  {0,1} |
+| sentiment_analysis|integer|  0-10 |
+| m1      |     float      |-10.0 - 10.0|
+| m2      |     float      |0.0 - 10000|
+| m3      |     float      |-1.0 - 1.0|
+| m4      |     binary     |  {0,1} |
