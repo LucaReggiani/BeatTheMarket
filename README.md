@@ -80,3 +80,7 @@ them might also be based on some insider information, but that‘s a different s
 | m2      |     float      |0.0 - 10000|
 | m3      |     float      |-1.0 - 1.0|
 | m4      |     binary     |  {0,1} |
+
+## Output
+Output: 74.25% accuracy.
+Output:
