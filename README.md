@@ -83,4 +83,3 @@ them might also be based on some insider information, but that‘s a different s
 
 ## Output
 Output: 74.25% accuracy.
-Output:
